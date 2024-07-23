@@ -1,5 +1,6 @@
 {
 	"files.associations": {
+		"*.tpp": "cpp",
 		"iostream": "cpp",
 		"__bit_reference": "cpp",
 		"__config": "cpp",
@@ -44,7 +45,16 @@
 		"array": "cpp",
 		"charconv": "cpp",
 		"iomanip": "cpp",
-		"vector": "cpp"
+		"vector": "cpp",
+		"__hash_table": "cpp",
+		"__node_handle": "cpp",
+		"deque": "cpp",
+		"optional": "cpp",
+		"unordered_map": "cpp",
+		"fstream": "cpp",
+		"numbers": "cpp",
+		"__tree": "cpp",
+		"map": "cpp"
 	},
 	"github.copilot.editor.enableCodeActions": false
 }
