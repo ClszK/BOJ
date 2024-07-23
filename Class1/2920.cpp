@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 
 int main() {
   int arr[8];
@@ -17,5 +18,20 @@ int main() {
     std::cout << "descending" << std::endl;
   else
     std::cout << "ascending" << std::endl;
+=======
+#include <vector>
+
+int main() {
+  std::vector<int> vec;
+  int num;
+  for (int i = 0; i < 8; ++i) {
+    if (!(std::cin >> num) || num < 1 || num > 8) return 1;
+    vec.push_back(num);
+  }
+
+int temp = vec[0];
+
+
+>>>>>>> 94dc9165d5bc55be9afb8bba4ae6e9d22826b292
   return 0;
 }

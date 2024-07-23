@@ -46,6 +46,7 @@
 		"charconv": "cpp",
 		"iomanip": "cpp",
 		"vector": "cpp",
+<<<<<<< HEAD
 		"__hash_table": "cpp",
 		"__node_handle": "cpp",
 		"deque": "cpp",
@@ -55,6 +56,34 @@
 		"numbers": "cpp",
 		"__tree": "cpp",
 		"map": "cpp"
+=======
+		"__debug": "cpp",
+		"__errc": "cpp",
+		"__functional_base": "cpp",
+		"__hash_table": "cpp",
+		"__mutex_base": "cpp",
+		"__node_handle": "cpp",
+		"__nullptr": "cpp",
+		"__string": "cpp",
+		"__tuple": "cpp",
+		"atomic": "cpp",
+		"bit": "cpp",
+		"chrono": "cpp",
+		"exception": "cpp",
+		"functional": "cpp",
+		"iterator": "cpp",
+		"memory": "cpp",
+		"optional": "cpp",
+		"system_error": "cpp",
+		"type_traits": "cpp",
+		"unordered_map": "cpp",
+		"utility": "cpp",
+		"__tree": "cpp",
+		"deque": "cpp",
+		"fstream": "cpp",
+		"map": "cpp",
+		"stack": "cpp"
+>>>>>>> 94dc9165d5bc55be9afb8bba4ae6e9d22826b292
 	},
 	"github.copilot.editor.enableCodeActions": false
 }
