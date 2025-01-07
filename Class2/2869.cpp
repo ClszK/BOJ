@@ -1,17 +1,23 @@
 #include <iostream>
-#include <sstream>
-
-int digitCnt(int n) {
-  if (n / 10 == 0) return 1;
-  return 10 * digitCnt(n / 10);
-}
 
 int main() {
-  int A, B, V;
+  long A, B, V;
+  long result;
   std::cin >> A >> B >> V;
 
-  std::cout << (V - A) / (A - B) + (V - A) % (A - B) +
-                   ((V - A) % (A - B) == 0 ? 1 : 0);
+  if (V <= A) {
+    std::cout << 1 << std::endl;
+    return 0;
+  }
+
+  result = (V - A) / (A - B);
+  if ((V - A) % (A - B)) {
+    result += ((V - A) % (A - B) + A) / A;
+    result += (((V - A) % (A - B) + A) % A ? 1 : 0);
+  } else
+    result += 1;
+
+  std::cout << result << std::endl;
 
   return 0;
 }
