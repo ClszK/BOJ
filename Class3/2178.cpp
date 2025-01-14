@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <tuple>
 #include <utility>
 #include <vector>
 
@@ -9,30 +10,28 @@ int N, M;
 vector<bool> graph;
 int dir[4][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
-int bfs(int start) {
-  queue<pair<int, int> > q;
+int bfs(int x, int y) {
+  queue<tuple<int, int, int> > q;
 
-  q.push({start, 0});
-  graph[start] = false;
-
-  if (start == N * M) return 0;
+  q.push({x, y, 1});
+  graph[y * M + x] = false;
+  if (y * M + x == N * M - 1) return 0;
 
   while (!q.empty()) {
-    auto [idx, depth] = q.front();
+    auto [x, y, depth] = q.front();
 
     q.pop();
     for (int i = 0; i < 4; ++i) {
-      int next = idx + dir[i][0];
+      int nx = x + dir[i][0];
+      int ny = y + dir[i][1];
 
+      int next = ny * M + nx;
       if (next == N * M - 1) return depth + 1;
-      if (next % M == 0 && next != idx) continue;
-      next += dir[i][1] * M;
 
-      if (((next < 0 || next >= N * M) && next != idx) || !graph[next])
-        continue;
+      if (nx < 0 || nx >= M || ny < 0 || ny >= N || !graph[next]) continue;
 
       graph[next] = false;
-      q.push({next, depth + 1});
+      q.push({nx, ny, depth + 1});
     }
   }
   return 0;
@@ -53,6 +52,6 @@ int main() {
       graph[i * M + j] = (str[j] == '1' ? true : false);
   }
 
-  cout << bfs(0) << '\n';
+  cout << bfs(0, 0) << '\n';
   return 0;
 }
